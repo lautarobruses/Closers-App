@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closers App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- NAV -->
+    <nav>
+      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <path d="M567.938 243.908L462.25 85.374A48.003 48.003 0 0 0 422.311 64H153.689a48 48 0 0 0-39.938 21.374L8.062 243.908A47.994 47.994 0 0 0 0 270.533V400c0 26.51 21.49 48 48 48h480c26.51 0 48-21.49 48-48V270.533a47.994 47.994 0 0 0-8.062-26.625zM162.252 128h251.497l85.333 128H376l-32 64H232l-32-64H76.918l85.334-128z"></path>
+      </svg>
+      <h1>MyContent Academy</h1>
+      <h2>Closers App</h2>
+      <button class="aside-button selected" onclick="changeView(this)">Daily View</button>
+      <button class="aside-button" onclick="changeView(this)">Closer View</button>
+      <button class="aside-button" onclick="changeView(this)">Master View</button></nav>
+    <main>
+      <!-- ASIDE -->
+      <aside>
+        <!-- Utilidades -->
+        <h2 id="aside-title">Daily View</h2>
+        <div class="utilities-container">
+          <button class="svg-button">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.9 54.9C10.5 40.9 24.5 32 40 32H472c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9V448c0 12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6V320.9L9 97.3C-.7 85.4-2.8 68.8 3.9 54.9z"></path>
+            </svg>
+          </button>
+          <button class="svg-button" id="double-arrow">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path d="M438.6 150.6c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.7 96 32 96C14.3 96 0 110.3 0 128s14.3 32 32 32l306.7 0-41.4 41.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96zm-333.3 352c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 416 416 416c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0 41.4-41.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96z"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="search-container">
+          <svg class="icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h24v24H0V0z"></path><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+          </svg>
+          <input type="text" placeholder="Buscar...">
+        </div>
+        <!-- Leads -->
+        <ul class="selectable-list" id="selectable-list">
+          <li>
+            <div class="accordion-header">
+              <svg class="arrow" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
+              </svg>
+              <p class="main-p">Fecha de agendación:</p>
+              <p class="secondary-p">6/28/2024 8:30am</p>
+            </div>
+            <div class="accordion-content">
+              <div class="etiqueta"></div>
+              <p class="main-p">firiioon@sirviioslfm.iom</p>
+              <p class="secondary-p">ig_Instagram_Reels</p>
+              <p class="status" id="status-button">Contactado</p>
+            </div>
+          </li>
+          <li>
+            <div class="accordion-header">
+              <svg class="arrow" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
+              </svg>
+              <p class="main-p">Fecha de agendación:</p>
+              <p class="secondary-p">6/28/2024 8:30am</p>
+            </div>
+            <div class="accordion-content">
+              <div class="etiqueta"></div>
+              <p class="main-p">firiioon@sirviioslfm.iom</p>
+              <p class="secondary-p">ig_Instagram_Reels</p>
+              <p class="status">Contactado</p>
+            </div>
+          </li>
+          <li>
+            <div class="accordion-header">
+              <svg class="arrow" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
+              </svg>
+              <p class="main-p">Fecha de agendación:</p>
+              <p class="secondary-p">6/28/2024 8:30am</p>
+            </div>
+            <div class="accordion-content">
+              <div class="etiqueta"></div>
+              <p class="main-p">firiioon@sirviioslfm.iom</p>
+              <p class="secondary-p">ig_Instagram_Reels</p>
+              <p class="status">Contactado</p>
+            </div>
+          </li>
+          <li>
+            <div class="accordion-header">
+              <svg class="arrow" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
+              </svg>
+              <p class="main-p">Fecha de agendación:</p>
+              <p class="secondary-p">6/28/2024 8:30am</p>
+            </div>
+            <div class="accordion-content">
+              <div class="etiqueta"></div>
+              <p class="main-p">firiioon@sirviioslfm.iom</p>
+              <p class="secondary-p">ig_Instagram_Reels</p>
+              <p class="status">Contactado</p>
+            </div>
+          </li>
+          <li>
+            <div class="accordion-header">
+              <svg class="arrow" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
+              </svg>
+              <p class="main-p">Fecha de agendación:</p>
+              <p class="secondary-p">6/28/2024 8:30am</p>
+            </div>
+            <div class="accordion-content">
+              <div class="etiqueta"></div>
+              <p class="main-p">firiioon@sirviioslfm.iom</p>
+              <p class="secondary-p">ig_Instagram_Reels</p>
+              <p class="status">Contactado</p>
+            </div>
+          </li>
+          <li>
+            <div class="accordion-header">
+              <svg class="arrow" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
+              </svg>
+              <p class="main-p">Fecha de agendación:</p>
+              <p class="secondary-p">6/28/2024 9:50pm</p>
+            </div>
+            <div class="accordion-content">
+              <div class="etiqueta"></div>
+              <p class="main-p">firiioon@sirviioslfm.iom</p>
+              <p class="secondary-p">ig_Instagram_Reels</p>
+              <p class="status">Contactado</p>
+            </div>
+          </li>
+        </ul>
+      </aside>
+      <!-- SECTION -->
+      <section>
+        <div class="arrows-container">
+          <button class="arrow-button" id="up-button">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path d="M256 217.9L383 345c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.3-24.6 0-34L273 167c-9.1-9.1-23.7-9.3-33.1-.7L95 310.9c-4.7 4.7-7 10.9-7 17s2.3 12.3 7 17c9.4 9.4 24.6 9.4 33.9 0l127.1-127z"></path>
+            </svg>
+          </button>
+          <button class="arrow-button" id="down-button">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="closer-container">
+          <h2>Juanjo</h2>
+        </div>
+        <div class="lead-container">
+          <div class="atributos-container">
+            <p class="main-p">Closer (Usuario):</p>
+            <p class="main-p">Fecha de Agendacion:</p>
+            <p class="main-p">Email:</p>
+            <p class="main-p">Estado:</p>
+            <p class="main-p">UTM Source:</p>
+            <p class="main-p">UTM Campaign:</p>
+            <p class="main-p">UTM Medium:</p>
+            <p class="main-p">UTM Term:</p>
+            <p class="main-p">UTM Content:</p>
+          </div>
+          <div class="datos-container">
+            <p class="closer-p">Juanjo</p>
+            <p class="secondary-p">Fecha de Agendacion:</p>
+            <p class="secondary-p" id="email-tag">Email:</p>
+            
+            <div class="dropdown">
+              <button id="dropdown-button" onclick="showDropdown()">vacio</button>
+              <div id="myDropdown" class="dropdown-content">
+                <a class="vacio" href="#" onclick="updateButton(this.textContent, 'white'); hideDropdown(); hideDropdown()">vacio</a>
+                <a class="contactado" href="#" onclick="updateButton(this.textContent, '#3B7197'); hideDropdown()">Contactado</a>
+                <a class="esperando-respuesta" href="#" onclick="updateButton(this.textContent, '#C39700'); hideDropdown()">Esperando Respuesta</a>
+                <a class="en-llamada" href="#" onclick="updateButton(this.textContent, '#974063'); hideDropdown()">En llamada</a>
+                <a class="win" href="#" onclick="updateButton(this.textContent, '#46A094'); hideDropdown()">Win</a>
+                <a class="lose" href="#" onclick="updateButton(this.textContent, '#E6534F'); hideDropdown()">Lose</a>
+              </div>
+            </div>
+
+            <p class="secondary-p">UTM Source:</p>
+            <p class="secondary-p">UTM Campaign:</p>
+            <p class="secondary-p">UTM Medium:</p>
+            <p class="secondary-p">UTM Term:</p>
+            <p class="secondary-p">UTM Content:</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

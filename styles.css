@@ -1,0 +1,453 @@
+:root { /*Variables*/
+    --color-principal: #6559D5;
+    --color-secundario: #5547BB;
+    --blanco-alternativo: #F5F5FA;
+    --gris-campo: #D9D9D9;
+    --seleccion-tarjeta: #CDD3F8;
+
+    --contactado-color: #3B7197;
+    --esperando-respuesta-color: #C39700;
+    --en-llamada-color: #974063;
+    --win-color: #46A094;
+    --lose-color: #E6534F;
+
+    --color-fuente-secundario: rgba(51, 51, 51, 0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*De esta manera incluyo el padding y el border en la altura-ancho total*/
+}
+
+body, html {
+    font-family: 'Nunito', sans-serif;
+    height: 100%;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* FUENTES */
+
+.main-p {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    color: #000000;
+}
+
+.main-p .selected {
+    color: #FFFFFF;
+}
+
+.secondary-p {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    color: #333333;
+    opacity: 80%;
+}
+
+.secondary-p .selected {
+    color: #F5F5FA;
+}
+
+/* GENERAL */
+
+.container {
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* NAVBAR */
+
+nav {
+    background-color: var(--color-principal);
+    height: auto;
+    color: white;
+    padding: 48px 16px;
+    border-radius: 8px 0 0 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+nav svg {
+    height: 24px;
+    width: 24px;
+}
+
+nav h2 {
+    margin-bottom: 48px;
+}
+
+nav .aside-button {
+    background-color: var(--color-principal);
+    color: white;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: solid 2px var(--color-secundario);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+nav .aside-button:hover {
+    background-color: var(--color-secundario);
+}
+
+nav .aside-button.selected {
+    background-color: white;
+    color: var(--color-principal);
+}
+
+/* MAIN */
+
+main {
+    background-color: var(--gris-campo);
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ASIDE */
+
+aside {
+    background-color: var(--blanco-alternativo);
+    height: 100%;
+    width: 340px;
+    padding-top: 32px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+aside #aside-title {
+    font-size: 24px;
+    width: 100%;
+    padding-left: 16px;
+    font-weight: bold;
+    text-align: left;
+    color: black;
+    margin-bottom: 20px;
+}
+
+aside .utilities-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 16px;
+    align-items: center;
+    padding: 0px 24px;
+}
+
+aside .svg-button {
+    height: 24px;
+    width: 24px;
+    border: 0px;
+    padding: 4px;
+}
+
+aside .svg-button svg {
+    color: var(--color-fuente-secundario);
+    height: 100%;
+    width: 100%;
+}
+
+#double-arrow {
+    transform: rotate(90deg);
+}
+
+.search-container {
+    position: relative;
+    width: 324px;
+    margin: 4px auto;
+}
+
+.search-container input[type="text"] {
+    width: 100%;
+    padding: 10px 10px 10px 40px; /* Espacio para el icono */
+    font-size: 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+
+.search-container input[type="text"]::placeholder {
+    color: #aaa;
+}
+
+.search-container .icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #aaa;
+}
+
+.selectable-list {
+    list-style-type: none;
+    width: 100%;
+    max-width: 340px;
+    margin: 8px 0px;
+    border-radius: 8px;
+    overflow-y: scroll;
+}
+
+.selectable-list li {
+    background-color: var(--blanco-alternativo);
+    padding-bottom: 1px;
+}
+
+.accordion-header {
+    background-color: var(--gris-campo);
+    padding: 15px 20px;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.accordion-header p {
+    margin-right: 8px;
+}
+
+.accordion-header.selected {
+    background-color: var(--color-secundario);
+}
+
+.accordion-header.selected p.main-p {
+    color: white;
+}
+
+.accordion-header.selected p.secondary-p {
+    color: #F5F5FA;
+}
+
+.accordion-header .arrow {
+    color: var(--color-fuente-secundario);
+    margin-right: 8px;
+    transition: transform 0.3s;
+}
+.accordion-header.active .arrow {
+    transform: rotate(-180deg);
+}
+
+.accordion-header.selected .arrow  {
+    color: white;
+    margin-right: 8px;
+    transition: transform 0.3s;
+}
+
+.accordion-content {
+    position: relative;
+    background-color: white;
+    font-size: 12px;
+    padding: 15px 20px;
+    margin: 6px 8px;
+    border-radius: 8px;
+    display: none;
+}
+
+.accordion-content.selected {
+    background-color: var(--seleccion-tarjeta);
+}
+
+.accordion-content .etiqueta {
+    background-color: var(--contactado-color);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 8px;
+    border-radius: 8px 0 0 8px;
+}
+
+.accordion-content p:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.accordion-content .status {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: var(--contactado-color);
+    color: white;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+/* SECTION */
+
+section {
+    background-color: var(--blanco-alternativo);
+    height: 100%;
+    width: 580px;
+    padding: 16px;
+}
+
+.arrow-button {
+    height: 32px;
+    width: 32px;
+    border: 0px;
+    padding: 2px;
+}
+
+.arrow-button svg {
+    height: 100%;
+    width: 100%;
+}
+
+.closer-container {
+    background-color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 8px 16px;
+    margin-top: 48px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.lead-container {
+    background-color: var(--blanco-alternativo);
+    height: 85%;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+
+    display: grid; /*convierte al elemento en un contenedor grid*/
+    grid-gap: 4px; /*espaciados entre cada elemento, pero no en la parte externa*/
+    grid-template-columns: repeat(3, 1fr); /*especifico la cantidad de columnas*/
+    grid-template-rows: repeat(1, auto); /*especifico la cantidad de filas*/
+}
+
+.lead-container p {
+    margin-bottom: 48px;
+}
+
+.atributos-container {
+    background-color: white;
+    padding: 32px 16px;
+    border-radius: 8px;
+
+    grid-column-start: 1; /*borde donde comienza la columna*/
+    grid-column-end: 2; /*borde donde termina la columna*/ /* -1 si no sabemos cuantas columnas tenemos*/
+}
+
+.datos-container {
+    background-color: white;
+    padding: 25px 16px 32px 16px;
+    border-radius: 8px;
+
+    grid-column-start: 2; /*borde donde comienza la columna*/
+    grid-column-end: 4; /*borde donde termina la columna*/ /* -1 si no sabemos cuantas columnas tenemos*/
+}
+
+#email-tag {
+    margin-bottom: 41px;
+}
+
+.closer-p {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: var(--gris-campo);
+    color: var(--color-fuente-secundario);
+    font-weight: bold;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#dropdown-button {
+    display: inline-block;
+    background-color: white;
+    color: white;
+    padding: 5px 10px;
+    margin-top: -13px;
+    margin-bottom: 41px;
+    border-radius: 12px;
+    font-size: 12px;
+    border: solid 1px var(--gris-campo);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    width: 100%;
+    padding: 8px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: inline-block;
+    color: white;
+    padding: 5px 10px;
+    margin: 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    opacity: 80%;
+}
+
+.show {
+    width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.vacio {
+    background-color: white;
+    color: white;
+    border: solid 1px black;
+    border: solid 1px var(--gris-campo);
+}
+
+.contactado {
+    background-color: var(--contactado-color);
+}
+
+.esperando-respuesta {
+    background-color: var(--esperando-respuesta-color);
+}
+
+.en-llamada {
+    background-color: var(--en-llamada-color);
+}
+
+.win {
+    background-color: var(--win-color);
+}
+
+.lose {
+    background-color: var(--lose-color);
+}

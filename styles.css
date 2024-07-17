@@ -29,6 +29,15 @@ html {
 
 button {
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
 }
 
 /* FUENTES */
@@ -54,6 +63,10 @@ button {
 
 .secondary-p .selected {
   color: #f5f5fa;
+}
+
+.main-p, .secondary-p {
+  transition: color 0.3s ease;
 }
 
 /* GENERAL */
@@ -101,6 +114,7 @@ nav .aside-button {
   font-size: 16px;
   font-weight: bold;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
   display: flex;
   flex-direction: row;
@@ -111,6 +125,7 @@ nav .aside-button {
 
 nav .aside-button:hover {
   background-color: var(--color-secundario);
+  box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.2);
 }
 
 nav .aside-button.selected {
@@ -231,6 +246,7 @@ aside .svg-button svg {
   background-color: var(--gris-campo);
   padding: 15px 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
   display: flex;
   justify-content: left;
@@ -260,6 +276,8 @@ aside .svg-button svg {
 }
 .accordion-header.active .arrow {
   transform: rotate(-180deg);
+  transition: transform 0.3s ease;
+
 }
 
 .accordion-header.selected .arrow {
@@ -276,10 +294,13 @@ aside .svg-button svg {
   margin: 6px 8px;
   border-radius: 8px;
   display: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, padding 0.3s ease, margin 0.3s ease;
 }
 
 .accordion-content.selected {
   background-color: var(--seleccion-tarjeta);
+  transition: background-color 0.3s ease;
 }
 
 .accordion-content .etiqueta {
@@ -412,6 +433,7 @@ section {
   padding: 8px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  transition: opacity 0.3s ease;
 }
 
 .dropdown-content a {
@@ -422,10 +444,11 @@ section {
   border-radius: 12px;
   font-size: 12px;
   text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .dropdown-content a:hover {
-  opacity: 80%;
+  opacity: 85%;
 }
 
 .show {

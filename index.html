@@ -174,6 +174,7 @@
             <p class="main-p">Fecha de Agendacion:</p>
             <p class="main-p">Email:</p>
             <p class="main-p">Estado:</p>
+            <p class="main-p">Llamada Realizada:</p>
             <p class="main-p">UTM Source:</p>
             <p class="main-p">UTM Campaign:</p>
             <p class="main-p">UTM Medium:</p>
@@ -194,6 +195,14 @@
                 <a class="en-llamada" href="#" onclick="updateButton(this.textContent, '#974063'); hideDropdown()">En llamada</a>
                 <a class="win" href="#" onclick="updateButton(this.textContent, '#46A094'); hideDropdown()">Win</a>
                 <a class="lose" href="#" onclick="updateButton(this.textContent, '#E6534F'); hideDropdown()">Lose</a>
+              </div>
+            </div>
+            <br>
+            <div class="dropdown" id="llamada-realizada-button">
+              <button id="dropdown-llamada-button" onclick="showDropdownLlamada()">No</button>
+              <div id="myDropdownLlamada" class="dropdown-content">
+                <a class="lose" href="#" onclick="updateButtonLlamada(this.textContent, '#E6534F'); hideDropdown()">No</a>
+                <a class="win" href="#" onclick="updateButtonLlamada(this.textContent, '#46A094'); hideDropdown()">Si</a>
               </div>
             </div>
 

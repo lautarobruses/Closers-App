@@ -381,7 +381,7 @@ section {
   border-radius: 8px;
 
   grid-column-start: 1; /*borde donde comienza la columna*/
-  grid-column-end: 2; /*borde donde termina la columna*/ /* -1 si no sabemos cuantas columnas tenemos*/
+  grid-column-end: 2; /*borde donde termina la columna*/
 }
 
 .datos-container {
@@ -390,7 +390,7 @@ section {
   border-radius: 8px;
 
   grid-column-start: 2; /*borde donde comienza la columna*/
-  grid-column-end: 4; /*borde donde termina la columna*/ /* -1 si no sabemos cuantas columnas tenemos*/
+  grid-column-end: 4; /*borde donde termina la columna*/
 }
 
 #email-tag {
@@ -412,7 +412,8 @@ section {
   display: inline-block;
 }
 
-#dropdown-button {
+#dropdown-button,
+#dropdown-llamada-button {
   display: inline-block;
   background-color: white;
   color: white;
@@ -422,6 +423,10 @@ section {
   border-radius: 12px;
   font-size: 12px;
   border: solid 1px var(--gris-campo);
+}
+
+#dropdown-llamada-button {
+ background-color: var(--lose-color);
 }
 
 .dropdown-content {
@@ -449,6 +454,10 @@ section {
 
 .dropdown-content a:hover {
   opacity: 85%;
+}
+
+#llamada-realizada-button {
+  display: block;
 }
 
 .show {

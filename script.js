@@ -97,6 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function showDropdown() {
 	document.getElementById("myDropdown").classList.toggle("show");
+  document.getElementById("myDropdownLlamada").classList.remove("show");
+
+}
+
+function showDropdownLlamada() {
+  document.getElementById("myDropdown").classList.remove("show");
+	document.getElementById("myDropdownLlamada").classList.toggle("show");
 }
 
 function updateButton(text, colorClass) {
@@ -114,8 +121,14 @@ function updateButton(text, colorClass) {
 	}
 }
 
+function updateButtonLlamada(text, colorClass) {
+  document.getElementById("dropdown-llamada-button").textContent = text;
+  document.getElementById("dropdown-llamada-button").style.backgroundColor = colorClass;
+}
+
 function hideDropdown() {
 	document.getElementById("myDropdown").classList.remove("show");
+	document.getElementById("myDropdownLlamada").classList.remove("show");
 }
 
 // Cierra el menú desplegable al hacer clic fuera de él

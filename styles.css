@@ -313,7 +313,14 @@ aside .svg-button svg {
   border-radius: 8px 0 0 8px;
 }
 
-.accordion-content p:not(:last-child) {
+.content-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-content p:not(.status) {
   margin-bottom: 10px;
 }
 
